@@ -10,8 +10,9 @@ namespace SBO
     {
         static void Main(string[] args)
         {
-            List<Person> personList = Enumerable.Range(1, 1200).ToList().Select(i => new Person { Id = i, Name = i.ToString() }).ToList();
-            List<Contact> contactList = Enumerable.Range(1, 2000).ToList().Select(i => new Contact { Id = i, Content = i.ToString() }).ToList();
+            // Just the fill the list
+            List<Person> personList = Enumerable.Range(1, 120).ToList().Select(i => new Person { Id = i, Name = i.ToString() }).ToList();
+            List<Contact> contactList = Enumerable.Range(1, 200).ToList().Select(i => new Contact { Id = i, Content = i.ToString() }).ToList();
 
             int pageSize = 5;
 

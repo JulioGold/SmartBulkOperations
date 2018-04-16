@@ -5,6 +5,12 @@ namespace SmartBulkOperations
 {
     public class PagedBulk<T> : IPagedBulk<T>
     {
+        private int _currentPage = default(int);
+
+        private int _numberOfPages = default(int);
+
+        private IBulkInsert _bulkInsert;
+
         public PagedBulk() { }
 
         public PagedBulk(List<T> items, IBulkInsert bulkInsert)
@@ -12,12 +18,6 @@ namespace SmartBulkOperations
             Items = items;
             _bulkInsert = bulkInsert;
         }
-
-        private int _currentPage = default(int);
-
-        private int _numberOfPages = default(int);
-
-        private IBulkInsert _bulkInsert;
 
         public int PageSize { get; set; } = 500;
 
