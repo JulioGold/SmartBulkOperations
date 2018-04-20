@@ -3,6 +3,15 @@
   <PropertyGroup>
     <TargetFrameworks>net45;net451;net452;net46;net461;netcoreapp1.1;netcoreapp2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>JulioGold</Authors>
+    <Company>JulioGold</Company>
+    <PackageProjectUrl>https://github.com/JulioGold/SmartBulkOperations</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/JulioGold/SmartBulkOperations/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/JulioGold/SmartBulkOperations</RepositoryUrl>
+    <Copyright>Copyright 2018</Copyright>
+    <Version>1.0.0</Version>
+    <PackageTags>smart entity framework EF helper bulk sql operations</PackageTags>
+    <Description>Help to create SQL DB bulk operations.</Description>
   </PropertyGroup>
 
 </Project>
