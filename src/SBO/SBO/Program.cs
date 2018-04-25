@@ -67,6 +67,13 @@ namespace SBO
 
             string sqlCmdContact = contactBulk.BulkInsertCmd(contactList);
 
+            ////////////////////////////////////////////////////////////////////////
+
+            /* With default BulkDelete implementation */
+
+            BulkDelete defaultBulkDelete = new BulkDelete();
+            var defaultBulkDeleteSqlCmdPerson = defaultBulkDelete.BulkDeleteCmd(personList, e => e.Id);
+
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
     }

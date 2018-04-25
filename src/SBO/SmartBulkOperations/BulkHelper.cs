@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 
 namespace SmartBulkOperations
@@ -24,7 +25,20 @@ namespace SmartBulkOperations
             return comaSeparatedProperties;
         }
 
-        private static List<PropertyInfo> PropertiesToSql(object sourceObject)
+        public static string GetPropertyName<TType, TPropertyType>(Expression<Func<TType, TPropertyType>> entityPropertyName) where TType : class where TPropertyType : struct
+        {
+            MemberExpression body = entityPropertyName.Body as MemberExpression;
+
+            if (body == null)
+            {
+                UnaryExpression ubody = (UnaryExpression)entityPropertyName.Body;
+                body = ubody.Operand as MemberExpression;
+            }
+
+            return body.Member.Name;
+        }
+
+        public static List<PropertyInfo> PropertiesToSql(object sourceObject)
         {
             List<PropertyInfo> propertiesValueList = sourceObject
                 .GetType()
